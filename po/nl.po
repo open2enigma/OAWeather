@@ -25,7 +25,7 @@ msgid "Celsius"
 msgstr "Celsius"
 
 msgid "Choose the icon set. You need to create an additional set here: /usr/share/enigma2/WeatherIconSets/NAME."
-msgstr "Kies de Weericonen set. Hier moet je een extra set aanmaken: /usr/share/enigma2/WeatherIconSets/NAME."
+msgstr "Kies weericonen set. Hiervoor moet je een extra set aanmaken in: /usr/share/enigma2/WeatherIconSets/NAME."
 
 msgid "Choose whether the 'night switch' should be activated or not. Some icons are then displayed as night icons with moon."
 msgstr "Kies of de 'nachtschakelaar' wel of niet geactiveerd moet worden. Sommige iconen worden dan weergegeven als nachticonen met maan."
@@ -50,7 +50,7 @@ msgid "East"
 msgstr "Oost"
 
 msgid "Enable Debug"
-msgstr "Schakel foutopsporing in"
+msgstr "Foutopsporing inschakelen"
 
 msgid "Enabled"
 msgstr "Ingeschakeld"
@@ -62,7 +62,7 @@ msgid "Enter the location for your weather forecasts."
 msgstr "A.u.b. de woonplaats voor uw weersvoorspelling opgeven."
 
 msgid "Error getting City ID"
-msgstr "Fout bij het downloaden van de City ID"
+msgstr "Fout bij het ophalen van City ID"
 
 msgid "Error in Weatherinfo"
 msgstr "Fout in Weerinfo"
@@ -95,7 +95,7 @@ msgid "Northwest"
 msgstr "Noord-west"
 
 msgid "Open-Meteo Wetter"
-msgstr "Open-Meteo Weather"
+msgstr "Open-Meteo Weer"
 
 msgid "OpenWeatherMap"
 msgstr "OpenWeatherMap"
@@ -105,6 +105,9 @@ msgstr "Neerslagkans"
 
 msgid "Refresh interval"
 msgstr "Hoe vaak actualiseren"
+
+msgid "Save"
+msgstr "Opslaan"
 
 msgid "Search for City ID please wait..."
 msgstr "De City-ID wordt gezocht, even geduld..."
@@ -160,7 +163,7 @@ msgid ""
 "Otherwise your settings won't be saved."
 msgstr ""
 "De API sleutel voor OpenWeatherMap is niet opgegeven of ongeldig.\n"
-"A.u.b. uw opgave controleren.\n"
+"A.u.b. uw ingave controleren.\n"
 "Anders worden uw instellingen niet opgeslagen."
 
 msgid "The city name is too short. More than 2 characters are needed for search."
@@ -173,7 +176,7 @@ msgid "Update"
 msgstr "Update"
 
 msgid "Weather API key"
-msgstr "Weather-API-Sleutel"
+msgstr "Weather API-sleutel"
 
 msgid "Weather Plugin"
 msgstr "Weer Plugin"
@@ -200,7 +203,7 @@ msgid "West"
 msgstr "West"
 
 msgid "km/h"
-msgstr "km/h"
+msgstr "km/u"
 
 msgid "m/s"
 msgstr "m/s"
