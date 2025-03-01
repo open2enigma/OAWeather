@@ -53,7 +53,7 @@ msgid "Enable Debug"
 msgstr "Foutopsporing inschakelen"
 
 msgid "Enabled"
-msgstr "Ingeschakeld"
+msgstr "Geactiveerd"
 
 msgid "Enter a personalized API key for use with OpenWeatherMap (https://openweathermap.org/)."
 msgstr "Een eigen API code opgeven voor gebruik van weergegevens uit OpenWeatherMap (https://openweathermap.org/)."
