@@ -102,34 +102,34 @@ class OAWeather(Source):
 		return "%s%s %s" % (text, self.getCurrentVal("humidity"), "%")
 
 	def getWindSpeed(self):
-		return "%s %s" % (self.getCurrentVal("windSpeed"), self.getVal("windunit"))
-		windSpeed, windunit = self.getCurrentVal("windSpeed"), self.getVal("windunit")
-		if windunit == "km/h" and config.plugins.OAWeather.windspeedMetricUnit.value == "m/s":
-			windSpeed, windunit = str(round(int(windSpeed) / 3.6, 1)), "m/s"
-		return "%s %s" % (windSpeed, windunit)
+		logout(data="getWindSpeed")
+		wind_speed = self.getCurrentVal("windSpeed")
+		wind_unit = self.getVal("windunit")
+		logout(data="wind_speed received from source: %s" % wind_speed)     # zahl
+		logout(data="wind_unit received from source: %s" % wind_unit)       # km/h
+		return "%s %s" % (wind_speed, wind_unit)
 
 	def getWindDir(self):
+		logout(data="getWindDir")
 		val = self.getCurrentVal("windDir")
-		return ("%s °" % val) if val else self.na
+		return ("%s " % val) if val else self.na
 
 	def getWindDirName(self):
-		skydirection = self.getCurrentVal("windDirSign", "* *")
+		logout(data="getWindDirName")
+		skydirection = self.getCurrentVal("windDirSign", "")
+		logout(data=str(skydirection))
 		if skydirection:
+			logout(data="getWindDirName if")
 			skydirection = skydirection.split(" ")
-			if len(skydirection) > 1:
-				return self.skydirs.get(skydirection[1], skydirection[1])
-			else:
-				return "Unknown direction"
+			logout(data=str(skydirection))
+		# die self.skydirs ist in der plugin.py da macht er aus dem W dann West
+			return self.skydirs[skydirection[0]] if skydirection[0] in self.skydirs else skydirection[0]
 		else:
 			return self.na
 
 	def getWindDirShort(self):
-		wind_dir_sign = self.getCurrentVal("windDirSign", " ")
-		print("Debug: windDirSign =", wind_dir_sign)  # Per debug
-		parts = wind_dir_sign.split(" ")
-		if len(parts) > 1:
-			return parts[1]
-		return ""
+		logout(data="getWindDirShort")
+		return self.getCurrentVal("windDirSign").split(" ")[1]
 
 	def getMaxTemp(self, day: int):
 		return "%s %s" % (self.getKeyforDay("maxTemp", day), self.tempunit)
