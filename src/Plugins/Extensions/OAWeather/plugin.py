@@ -80,7 +80,7 @@ def logout(data):
 
 
 config.plugins.OAWeather = ConfigSubsection()
-config.plugins.OAWeather.enabled = ConfigYesNo(default=False)
+config.plugins.OAWeather.enabled = ConfigYesNo(default=True)
 ICONSETS = [("", _("Default"))]
 
 if sys.version_info[0] >= 3:
