@@ -172,7 +172,7 @@ class WeatherSettingsViewNew(ConfigListScreen, Screen):
 	def createSetup(self):
 		self.editListEntry = None
 		self.list = []
-		self.list.append(getConfigListEntry(_("Enabled :"), config.plugins.OAWeather.enabled))
+		self.list.append(getConfigListEntry(_("Enabled"), config.plugins.OAWeather.enabled))
 		if config.plugins.OAWeather.enabled.value:
 			self.list.append(getConfigListEntry(_("Weather service"), config.plugins.OAWeather.weatherservice))
 			self.list.append(getConfigListEntry(_("Weather city name"), config.plugins.OAWeather.weathercity))
