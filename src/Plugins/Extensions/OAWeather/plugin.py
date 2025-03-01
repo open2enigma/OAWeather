@@ -331,19 +331,19 @@ class WeatherSettingsViewNew(ConfigListScreen, Screen):
 		self.setInputToDefault(config.plugins.OAWeather.owm_geocode, SAVE)
 		if self.session:
 			self.list = []
-			self.list.append(getConfigListEntry(_("Enabled :"), config.plugins.OAWeather.enabled))
+			self.list.append(getConfigListEntry(_("Enabled"), config.plugins.OAWeather.enabled))
 			if config.plugins.OAWeather.enabled.value:
-				self.list.append(getConfigListEntry(_("Weather service :"), config.plugins.OAWeather.weatherservice))
-				self.list.append(getConfigListEntry(_("Weather city name :"), config.plugins.OAWeather.weathercity))
-				self.list.append(getConfigListEntry(_("Weather API key :"), config.plugins.OAWeather.apikey))
-				self.list.append(getConfigListEntry(_("Temperature unit :"), config.plugins.OAWeather.tempUnit))
-				self.list.append(getConfigListEntry(_("Weather icon set :"), config.plugins.OAWeather.iconset))
-				self.list.append(getConfigListEntry(_("Weather icon night switch :"), config.plugins.OAWeather.nighticons))
-				self.list.append(getConfigListEntry(_("Refresh interval :"), config.plugins.OAWeather.refreshInterval))
-				self.list.append(getConfigListEntry(_("Cache data :"), config.plugins.OAWeather.cachedata))
-				self.list.append(getConfigListEntry(_("Enable Debug :"), config.plugins.OAWeather.debug))
+				self.list.append(getConfigListEntry(_("Weather service"), config.plugins.OAWeather.weatherservice))
+				self.list.append(getConfigListEntry(_("Weather city name"), config.plugins.OAWeather.weathercity))
+				self.list.append(getConfigListEntry(_("Weather API key"), config.plugins.OAWeather.apikey))
+				self.list.append(getConfigListEntry(_("Temperature unit"), config.plugins.OAWeather.tempUnit))
+				self.list.append(getConfigListEntry(_("Weather icon set"), config.plugins.OAWeather.iconset))
+				self.list.append(getConfigListEntry(_("Weather icon night switch"), config.plugins.OAWeather.nighticons))
+				self.list.append(getConfigListEntry(_("Refresh interval"), config.plugins.OAWeather.refreshInterval))
+				self.list.append(getConfigListEntry(_("Cache data"), config.plugins.OAWeather.cachedata))
+				self.list.append(getConfigListEntry(_("Enable Debug"), config.plugins.OAWeather.debug))
 			self['config'].setList(self.list)
-			self['status'].setText(_("Standard fertig"))
+			self['status'].setText(_("Standard finished"))
 
 	def setInputToDefault(self, configItem, SAVE):
 		configItem.setValue(configItem.default)
