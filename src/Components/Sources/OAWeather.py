@@ -7,11 +7,11 @@
 #
 # dogtag is distributed in the hope that it will be useful,
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
-# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.	See the
 # GNU General Public License for more details.
 #
 # You should have received a copy of the GNU General Public License
-# along with OAWeather.  If not, see <http://www.gnu.org/licenses/>.
+# along with OAWeather.	 If not, see <http://www.gnu.org/licenses/>.
 
 from datetime import datetime
 from Components.config import config
@@ -21,10 +21,9 @@ from Plugins.Extensions.OAWeather.plugin import weatherhandler
 
 class OAWeather(Source):
 
-	YAHOOnightswitch = {
-					"3": "47", "4": "47", "11": "45", "12": "45", "13": "46", "14": "46", "15": "46", "16": "46", "28": "27",
-					"30": "29", "32": "31", "34": "33", "37": "47", "38": "47", "40": "45", "41": "46", "42": "46", "43": "46"
-					}
+	YAHOOnightswitch = {"3": "47", "4": "47", "11": "45", "12": "45", "13": "46", "14": "46", "15": "46", "16": "46", "28": "27",
+						"30": "29", "32": "31", "34": "33", "37": "47", "38": "47", "40": "45", "41": "46", "42": "46", "43": "46"
+						}
 	METEOnightswitch = {"1": "2", "3": "4", "B": "C", "H": "I", "J": "K"}
 
 	YAHOOdayswitch = {"27": "28", "29": "30", "31": "32", "33": "34", "45": "39", "46": "16", "47": "4"}
@@ -103,6 +102,7 @@ class OAWeather(Source):
 		return "%s%s %s" % (text, self.getCurrentVal("humidity"), "%")
 
 	def getWindSpeed(self):
+		return "%s %s" % (self.getCurrentVal("windSpeed"), self.getVal("windunit"))
 		windSpeed, windunit = self.getCurrentVal("windSpeed"), self.getVal("windunit")
 		if windunit == "km/h" and config.plugins.OAWeather.windspeedMetricUnit.value == "m/s":
 			windSpeed, windunit = str(round(int(windSpeed) / 3.6, 1)), "m/s"
@@ -116,12 +116,20 @@ class OAWeather(Source):
 		skydirection = self.getCurrentVal("windDirSign", "* *")
 		if skydirection:
 			skydirection = skydirection.split(" ")
-			return self.skydirs.get(skydirection[1], skydirection[1])
+			if len(skydirection) > 1:
+				return self.skydirs.get(skydirection[1], skydirection[1])
+			else:
+				return "Unknown direction"
 		else:
 			return self.na
 
 	def getWindDirShort(self):
-		return self.getCurrentVal("windDirSign", " ").split(" ")[1]
+		wind_dir_sign = self.getCurrentVal("windDirSign", " ")
+		print("Debug: windDirSign =", wind_dir_sign)  # Per debug
+		parts = wind_dir_sign.split(" ")
+		if len(parts) > 1:
+			return parts[1]
+		return ""
 
 	def getMaxTemp(self, day: int):
 		return "%s %s" % (self.getKeyforDay("maxTemp", day), self.tempunit)
