@@ -1,5 +1,10 @@
 Package: enigma2-plugin-extensions-oaweather
-Version: 1.1
-Description: Weather component
+Version: 4.0
+Description: OAWeather Converter and Renderer to display Weather in Skin
+Section: extra
+Priority: optional
 Maintainer: jbleyel
-Depends: enigma2-tools-weatherinfo
+License: GPL-3.0-only
+Architecture: all
+OE: enigma2-plugin-extensions-oaweather
+Source: enigma2-plugin-extensions-oaweather.bb
