@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 # Copyright (C) 2023 jbleyel, Mr.Servo, Stein17
 #
 # OAWeather is free software: you can redistribute it and/or modify
@@ -16,6 +14,7 @@
 # along with OAWeather.  If not, see <http://www.gnu.org/licenses/>.
 
 # Some parts are taken from MetrixHD skin and MSNWeather Plugin.
+
 from __future__ import print_function
 
 from . import _
@@ -60,7 +59,7 @@ myfile = "/tmp/OAWeatherplugin.log"
 if isfile(myfile):
     remove(myfile)
 
-# kitte888 logfile anlegen die eingabe in logstatus
+# create log file entry in logstatus
 logstatus = "off"
 
 
@@ -253,7 +252,7 @@ class WeatherSettingsViewNew(ConfigListScreen, Screen):
                         except Exception:
                             print("[WeatherSettingsViewNew] Error in module 'showMenu': faulty entry in resultlist.")
 
-                    # --------------------- hier ist der alte aufruf der choicebox
+                    # --------------------- this is the old call of the choicebox
                     # self.session.openWithCallback(self.choiceIdxCallback, ChoiceBox, titlebartext=_("Select Your Location"), title="", list=tuple(self.citylist))
                     self.citylisttest = self.citylist
                     self.testScreen = self.session.open(TestScreen, citylisttest=self.citylisttest, okCallback=self.testScreenOkCallback)
@@ -281,7 +280,7 @@ class WeatherSettingsViewNew(ConfigListScreen, Screen):
             if city and longitude and latitude:
                 self.saveGeoCode(city, longitude, latitude)
         else:
-            logout("Die ausgewählte Stadt hat nicht genügend Informationen.")
+            logout("The selected city does not have enough information.")
 
     def saveGeoCode(self, city, longitude, latitude):
         config.plugins.OAWeather.weathercity.value = city
@@ -354,11 +353,11 @@ class WeatherSettingsViewNew(ConfigListScreen, Screen):
 
 class TestScreen(Screen):
     skin = """
-            <screen name="TestScreen"   position="center,center" size="1200,650" backgroundColor="#00000000"  transparent="0"  >
-                <eLabel position="0,0" size="1200,650" backgroundColor="#00000000"    transparent="0" zPosition="0" />
+            <screen name="TestScreen" position="center,center" size="1200,650" backgroundColor="#00000000" transparent="0" >
+                <eLabel position="0,0" size="1200,650" backgroundColor="#00000000" transparent="0" zPosition="0" />
                 <ePixmap position="10,590" zPosition="3" size="240,50" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/OAWeather/Images/red.png" transparent="1" alphatest="blend" />
-                <widget name="meinelist" position="100,20" size="1000,430" font="Regular;30" itemHeight="45"  backgroundColor="#00000000" foregroundColor="#00ffffff" transparent="0" zPosition="3" scrollbarMode="showOnDemand" />
-                <widget name="status" font="Regular; 25"  position="100,470" size="1000,40" foregroundColor ="#0000ff00" backgroundColor="#00000000" transparent="0"  zPosition="3" halign="center" valign="center" />
+                <widget name="meinelist" position="100,20" size="1000,430" font="Regular;30" itemHeight="45" backgroundColor="#00000000" foregroundColor="#00ffffff" transparent="0" zPosition="3" scrollbarMode="showOnDemand" />
+                <widget name="status" font="Regular; 25" position="100,470" size="1000,40" foregroundColor ="#0000ff00" backgroundColor="#00000000" transparent="0" zPosition="3" halign="center" valign="center" />
                 <widget source="key_red" render="Label" position="10,570" zPosition="5" size="240,50" font="Regular;30" halign="center" valign="center" backgroundColor="#00313040" foregroundColor="#00ffffff" transparent="1" />
             </screen>
             """
@@ -378,17 +377,17 @@ class TestScreen(Screen):
                                      'green': self.close,
                                      'yellow': self.close}, -1)
 
-        self['key_red'] = Label(_('exit'))
-        self['status'].setText(_("Select the City and Press Ok"))
+        self['key_red'] = Label(_('Exit'))
+        self['status'].setText(_("Select the City and Press OK"))
 
     def selectCity(self):
         selected_city_tuple = self['meinelist'].l.getCurrentSelection()
         if selected_city_tuple:
             selected_city = selected_city_tuple[0]
-            self.selected_city = selected_city  # Speichern Sie die ausgewählte Stadt
+            self.selected_city = selected_city  # Save the selected city
             if self.okCallback is not None:
                 self.okCallback(selected_city)
-            self.close()  # Schließen Sie den Bildschirm nach der Auswahl
+            self.close()  # Close the screen after selecting
 
 
 class WeatherHandler():
