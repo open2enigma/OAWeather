@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: OAWeather\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-01-15 16:34+0100\n"
-"PO-Revision-Date: 2022-12-31 13:47+0000\n"
+"PO-Revision-Date: 2025-03-01 13:47+0000\n"
 "Last-Translator: Snoete <snoete@hotmail.com>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/openatv/metrixhd/nl/>\n"
 "Language: nl\n"
@@ -41,7 +41,7 @@ msgid "Default"
 msgstr "Standaard"
 
 msgid "Defaults"
-msgstr "Standaard waarden"
+msgstr "Standaardinstellingen"
 
 msgid "Disabled"
 msgstr "Gedeactiveerd"
@@ -131,13 +131,13 @@ msgid "Select the preferred weather service to supply the weather information."
 msgstr "Een weerdienst selecteren voor het ophalen van de weerinformatie."
 
 msgid "Select the temperature unit to be used for temperature displays."
-msgstr "Selecteer de temperatuur eenheid die u wil gebruiken."
+msgstr "Selecteer de temperatuureenheid die u wil gebruiken."
 
 msgid "Select this option to save that last obtained weather data locally. This is used to initialize the data immediately after restart while updated data is being fetched."
-msgstr "Selecteer deze optie om de laatst opgevraagde weerinformatie lokaal op te slaan. Deze wordt direct na het starten van de ontvanger getoond, tijdens het downloaden van de actuele weersinformatie."
+msgstr "Selecteer deze optie om de laatst verkregen weergegevens lokaal op te slaan. Dit wordt gebruikt om de gegevens direct na het opnieuw opstarten te initialiseren terwijl bijgewerkte gegevens worden opgehaald."
 
 msgid "Set default values"
-msgstr "Standaard waarden instellen"
+msgstr "Standaardwaarden instellen"
 
 msgid "Show Weather Forecast"
 msgstr "Toon Weersverwachting"
@@ -162,7 +162,7 @@ msgid ""
 "Please verify your input data.\n"
 "Otherwise your settings won't be saved."
 msgstr ""
-"De API sleutel voor OpenWeatherMap is niet opgegeven of ongeldig.\n"
+"De API-sleutel voor OpenWeatherMap is niet opgegeven of ongeldig.\n"
 "A.u.b. uw ingave controleren.\n"
 "Anders worden uw instellingen niet opgeslagen."
 
@@ -201,6 +201,9 @@ msgstr "Weer instellingen"
 
 msgid "West"
 msgstr "West"
+
+msgid "Wind speed metric unit"
+msgstr "Windsnelheidsmeter"
 
 msgid "km/h"
 msgstr "km/u"
