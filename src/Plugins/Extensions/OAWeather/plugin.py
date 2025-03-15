@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 # Copyright (C) 2023 jbleyel, Mr.Servo, Stein17
 #
 # OAWeather is free software: you can redistribute it and/or modify
