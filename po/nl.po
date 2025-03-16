@@ -134,7 +134,7 @@ msgid "Select the temperature unit to be used for temperature displays."
 msgstr "Selecteer de temperatuureenheid die u wil gebruiken."
 
 msgid "Select this option to save that last obtained weather data locally. This is used to initialize the data immediately after restart while updated data is being fetched."
-msgstr "Selecteer deze optie om de laatst verkregen weergegevens lokaal op te slaan. Dit wordt gebruikt om de gegevens direct na het opnieuw opstarten te initialiseren terwijl bijgewerkte gegevens worden opgehaald."
+msgstr "Selecteer deze optie om de laatst verkregen weergegevens lokaal op te slaan. Dit is om de gegevens na een herstart te initialiseren terwijl er bijgewerkte gegevens worden opgehaald."
 
 msgid "Set default values"
 msgstr "Standaardwaarden instellen"
